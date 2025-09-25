@@ -96,7 +96,7 @@ const OnboardingModal: React.FC<OnboardingModalProps> = ({ isOpen, onClose }) =>
             <div className="terminal-content">
               <div className="terminal-line">
                 <span className="text-green-400">$</span>
-                <span className="text-white ml-2 typewriter">git clone &lt;your-repo-url&gt;</span>
+                <span className="text-white ml-2 typewriter">git clone &lt;https://github.com/XplnHUB/Insight-Py.git&gt;</span>
                 <button
                   onClick={() => copyToClipboard('git clone https://github.com/XplnHUB/Insight-Py.git', 'clone')}
                   className="copy-button ml-4"
