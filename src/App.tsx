@@ -45,10 +45,12 @@ function App() {
   ];
 
   const roadmapItems = [
-    { title: ".insightignore Support", status: "completed", quarter: "Q1 2024" },
-    { title: "HTML & PDF Export", status: "in-progress", quarter: "Q2 2024" },
-    { title: "Local AI Engines", status: "planned", quarter: "Q3 2024" },
-    { title: "Interactive Dashboard", status: "planned", quarter: "Q4 2024" }
+{ title: ".insightignore Support", status: "completed", quarter: "Q1 2025" },
+{ title: "HTML & PDF Export", status: "completed", quarter: "Q2 2025" },
+{ title: "Local AI Engines", status: "in-progress", quarter: "Q3 2025" },
+{ title: "Interactive Dashboard", status: "planned", quarter: "Q4 2025" },
+{ title: "Cloud Sync & Collaboration", status: "planned", quarter: "Q1 2026" },
+{ title: "VSCode Extension", status: "planned", quarter: "Q2 2026" }
   ];
 
   return (
