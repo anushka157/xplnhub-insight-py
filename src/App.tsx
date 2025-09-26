@@ -249,7 +249,6 @@ function App() {
           </div>
         </section>
 
-        {/* Footer/CTA */}
         <footer className="py-20 px-6 border-t border-cyan-500/20">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
