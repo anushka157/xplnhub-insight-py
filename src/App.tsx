@@ -116,11 +116,13 @@ function App() {
                   <span>Get Started</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="neon-button-outline flex items-center space-x-2">
-                  <Github className="w-5 h-5" />
-                  <span>View on GitHub</span>
-                  <Star className="w-4 h-4" />
-                </button>
+<a href="https://github.com/XplnHUB/Insight-Py" target="_blank" rel="noopener noreferrer">
+  <button className="neon-button-outline flex items-center space-x-2">
+    <Github className="w-5 h-5" />
+    <span>View on GitHub</span>
+    <Star className="w-4 h-4" />
+  </button>
+</a>
               </div>
             </div>
           </div>
