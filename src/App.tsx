@@ -75,9 +75,11 @@ function App() {
           <div className="container mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Terminal className="w-8 h-8 text-cyan-400" />
+              <a href="/">
               <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Insight
-              </span>
+               Insight
+               </span>
+              </a>
             </div>
             <nav className="hidden md:flex space-x-8">
               <a href="#features" className="text-gray-300 hover:text-cyan-400 transition-colors">Features</a>
