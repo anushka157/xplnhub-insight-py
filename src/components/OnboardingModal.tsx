@@ -456,10 +456,16 @@ const OnboardingModal: React.FC<OnboardingModalProps> = ({ isOpen, onClose }) =>
 
   const progressPercentage = ((currentStep + 1) / steps.length) * 100;
 
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div className="onboarding-overlay">
+    <div className="onboarding-overlay" onClick={handleOverlayClick}>
       <div className="onboarding-modal">
         <div className="onboarding-background">
           <div className="cyber-grid-modal"></div>
