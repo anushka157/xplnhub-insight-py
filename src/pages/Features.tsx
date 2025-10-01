@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Code, FileText, BarChart3, Brain, Zap, Shield, GitBranch, Package, Search, FileCode, Terminal, CheckCircle } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPython, faJs, faJava, faPhp, faRust, faSwift, faGolang, faHtml5 } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faDatabase, faTerminal, faGem, faBolt, faBullseye, faCircle } from '@fortawesome/free-solid-svg-icons';
+import LanguageModal from '../components/LanguageModal';
 
 const Features: React.FC = () => {
+  const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
   const mainFeatures = [
     {
       icon: <Code className="w-8 h-8" />,
@@ -100,10 +105,23 @@ const Features: React.FC = () => {
     }
   ];
 
-  const fileTypes = [
-    '.py', '.js', '.ts', '.jsx', '.tsx', '.html', '.css', '.scss', '.json', '.yaml', 
-    '.yml', '.md', '.txt', '.xml', '.sql', '.sh', '.bash', '.go', '.rs', '.java', 
-    '.c', '.cpp', '.php', '.rb', '.swift', '.kt', '.dart', '.vue', '.svelte'
+  const supportedLanguages = [
+    { name: "Python", icon: faPython, color: "text-blue-400" },
+    { name: "JavaScript", icon: faJs, color: "text-yellow-400" },
+    { name: "TypeScript", icon: faJs, color: "text-blue-500" },
+    { name: "Java", icon: faJava, color: "text-red-500" },
+    { name: "C/C++", icon: faCode, color: "text-blue-600" },
+    { name: "Go", icon: faGolang, color: "text-cyan-400" },
+    { name: "Rust", icon: faRust, color: "text-orange-500" },
+    { name: "PHP", icon: faPhp, color: "text-purple-500" },
+    { name: "Ruby", icon: faGem, color: "text-red-400" },
+    { name: "Swift", icon: faSwift, color: "text-orange-400" },
+    { name: "Kotlin", icon: faCircle, color: "text-purple-400" },
+    { name: "Dart", icon: faBullseye, color: "text-blue-400" },
+    { name: "HTML/CSS", icon: faHtml5, color: "text-orange-500" },
+    { name: "SQL", icon: faDatabase, color: "text-cyan-500" },
+    { name: "Shell", icon: faTerminal, color: "text-green-400" },
+    { name: "And 15+ more", icon: faBolt, color: "text-yellow-400" }
   ];
 
   return (
@@ -184,24 +202,40 @@ const Features: React.FC = () => {
           </div>
         </div>
 
-        {/* Supported File Types */}
+        {/* Supported Languages */}
         <div className="mb-32">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent">
-              30+ Supported File Types
+              Supports 30+ Languages
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-gray-300 mb-8">
               Comprehensive support for modern development stacks
             </p>
           </div>
-          <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-10 gap-4">
-            {fileTypes.map((type, index) => (
-              <div key={index} className="file-type-badge group">
-                <span className="font-mono text-sm group-hover:text-cyan-400 transition-colors">
-                  {type}
-                </span>
-              </div>
-            ))}
+          
+          <div className="max-w-4xl mx-auto mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {supportedLanguages.map((lang, index) => (
+                <div key={index} className="feature-card text-center py-4 hover:scale-105 transition-transform">
+                  <div className="mb-2">
+                    <FontAwesomeIcon icon={lang.icon} className={`text-3xl ${lang.color}`} />
+                  </div>
+                  <span className="text-sm text-gray-300 font-medium">{lang.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center">
+            <button
+              onClick={() => setIsLanguageModalOpen(true)}
+              className="neon-button mx-auto"
+            >
+              <span>View All Supported Languages & File Types</span>
+            </button>
+            <p className="text-gray-400 text-sm mt-4">
+              Click to see detailed file extensions and how each language is evaluated
+            </p>
           </div>
         </div>
 
@@ -232,6 +266,11 @@ const Features: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      <LanguageModal 
+        isOpen={isLanguageModalOpen} 
+        onClose={() => setIsLanguageModalOpen(false)} 
+      />
     </div>
   );
 };
