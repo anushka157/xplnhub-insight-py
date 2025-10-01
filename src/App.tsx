@@ -76,9 +76,9 @@ function App() {
             <div className="flex items-center space-x-2">
               <Terminal className="w-8 h-8 text-cyan-400" />
               <a href="/">
-              <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-               Insight
-               </span>
+                <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  Insight
+                </span>
               </a>
             </div>
             <nav className="hidden md:flex space-x-8">
@@ -121,13 +121,13 @@ function App() {
                   <span>Get Started</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
-<a href="https://github.com/XplnHUB/Insight-Py" target="_blank" rel="noopener noreferrer">
-  <button className="neon-button-outline flex items-center space-x-2">
-    <Github className="w-5 h-5" />
-    <span>View on GitHub</span>
-    <Star className="w-4 h-4" />
-  </button>
-</a>
+                <a href="https://github.com/XplnHUB/Insight-Py" target="_blank" rel="noopener noreferrer">
+                  <button className="neon-button-outline flex items-center space-x-2">
+                    <Github className="w-5 h-5" />
+                    <span>View on GitHub</span>
+                    <Star className="w-4 h-4" />
+                  </button>
+                </a>
               </div>
             </div>
           </div>
