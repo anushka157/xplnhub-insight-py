@@ -45,12 +45,12 @@ function App() {
   ];
 
   const roadmapItems = [
-{ title: ".insightignore Support", status: "completed", quarter: "Q1 2025" },
-{ title: "HTML & PDF Export", status: "in-progress", quarter: "Q2 2025" },
-{ title: "Local AI Engines", status: "planned", quarter: "Q3 2025" },
-{ title: "Interactive Dashboard", status: "planned", quarter: "Q4 2025" },
-{ title: "Cloud Sync & Collaboration", status: "planned", quarter: "Q1 2026" },
-{ title: "VSCode Extension", status: "planned", quarter: "Q2 2026" }
+    { title: ".insightignore Support", status: "completed", quarter: "Q1 2025" },
+    { title: "HTML & PDF Export", status: "in-progress", quarter: "Q2 2025" },
+    { title: "Local AI Engines", status: "planned", quarter: "Q3 2025" },
+    { title: "Interactive Dashboard", status: "planned", quarter: "Q4 2025" },
+    { title: "Cloud Sync & Collaboration", status: "planned", quarter: "Q1 2026" },
+    { title: "VSCode Extension", status: "planned", quarter: "Q2 2026" }
   ];
 
   return (
@@ -82,6 +82,7 @@ function App() {
               </a>
             </div>
             <nav className="hidden md:flex space-x-8">
+              <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors">About</a>
               <a href="#features" className="text-gray-300 hover:text-cyan-400 transition-colors">Features</a>
               <a href="#installation" className="text-gray-300 hover:text-cyan-400 transition-colors">Installation</a>
               <a href="#roadmap" className="text-gray-300 hover:text-cyan-400 transition-colors">Roadmap</a>
@@ -127,6 +128,67 @@ function App() {
     <Star className="w-4 h-4" />
   </button>
 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="py-32 px-6 bg-gray-800/30">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                About Insight
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                A next-generation code analysis tool that bridges the gap between traditional static analysis and AI-powered insights
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="feature-card">
+                  <h3 className="text-2xl font-semibold mb-4 text-cyan-400">What is Insight?</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Insight is a powerful Python CLI tool designed to help developers understand their codebases better. 
+                    It combines traditional static code analysis with cutting-edge AI technology to provide comprehensive, 
+                    actionable insights about your code structure, quality, and complexity.
+                  </p>
+                </div>
+                <div className="feature-card">
+                  <h3 className="text-2xl font-semibold mb-4 text-purple-400">Why Insight?</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Whether you're onboarding to a new project, conducting code reviews, or maintaining legacy systems, 
+                    Insight provides the clarity you need. Get instant reports with metrics, visualizations, and AI-powered 
+                    explanations that help you make informed decisions about your code.
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="feature-card">
+                  <h3 className="text-2xl font-semibold mb-4 text-pink-400">Key Highlights</h3>
+                  <ul className="space-y-3 text-gray-300">
+                    <li className="flex items-start space-x-3">
+                      <ChevronRight className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                      <span>Support for 30+ programming languages and file formats</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <ChevronRight className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                      <span>Detailed metrics including LOC, complexity, and code patterns</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <ChevronRight className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                      <span>AI-powered explanations with confidence scores</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <ChevronRight className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                      <span>Beautiful Markdown reports ready to share</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <ChevronRight className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                      <span>Easy integration into your development workflow</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
