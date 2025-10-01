@@ -224,7 +224,7 @@ const OnboardingModal: React.FC<OnboardingModalProps> = ({ isOpen, onClose }) =>
                 </button>
               </div>
               <div className="terminal-line delay-1">
-                <span className="text-purple-400 typewriter">(venv)</span>
+                <div><span className="text-purple-400 typewriter">(venv)</span></div>
                 <span className="text-green-400 ml-1">$</span>
                 <span className="text-gray-400 ml-2">Environment activated!</span>
               </div>
