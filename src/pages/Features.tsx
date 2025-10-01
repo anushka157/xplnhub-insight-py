@@ -1,0 +1,239 @@
+import React from 'react';
+import { Code, FileText, BarChart3, Brain, Zap, Shield, GitBranch, Package, Search, FileCode, Terminal, CheckCircle } from 'lucide-react';
+
+const Features: React.FC = () => {
+  const mainFeatures = [
+    {
+      icon: <Code className="w-8 h-8" />,
+      title: "Analyze 30+ File Types",
+      description: "Support for Python, JavaScript, TypeScript, HTML, CSS, JSON, YAML, and many more programming languages and formats. Insight automatically detects file types and applies appropriate analysis strategies.",
+      details: [
+        "Python (.py) - Full AST analysis",
+        "JavaScript/TypeScript (.js, .ts, .jsx, .tsx)",
+        "Web technologies (HTML, CSS, SCSS)",
+        "Configuration files (JSON, YAML, XML)",
+        "Shell scripts (.sh, .bash)",
+        "And 20+ more formats"
+      ]
+    },
+    {
+      icon: <FileText className="w-8 h-8" />,
+      title: "Generate Markdown Reports",
+      description: "Beautiful, structured reports in Markdown format with comprehensive analysis and insights. Reports include syntax highlighting, tables, and visualizations that are easy to read and share.",
+      details: [
+        "Structured sections with clear hierarchy",
+        "Syntax-highlighted code snippets",
+        "Formatted tables for metrics",
+        "Embedded charts and graphs",
+        "Export-ready documentation",
+        "GitHub-compatible formatting"
+      ]
+    },
+    {
+      icon: <BarChart3 className="w-8 h-8" />,
+      title: "Collect Static Metrics",
+      description: "Detailed metrics including lines of code, functions, classes, imports, and comment ratios. Get a complete picture of your codebase's structure and complexity.",
+      details: [
+        "Lines of Code (LOC) analysis",
+        "Function and class counting",
+        "Import dependency tracking",
+        "Comment ratio calculation",
+        "Cyclomatic complexity metrics",
+        "Code duplication detection"
+      ]
+    },
+    {
+      icon: <Brain className="w-8 h-8" />,
+      title: "AI-Powered Explanations",
+      description: "Get intelligent code analysis with LLM probability scores and actionable insights. Our AI understands context and provides meaningful recommendations.",
+      details: [
+        "Context-aware code explanations",
+        "Confidence scores for predictions",
+        "Actionable improvement suggestions",
+        "Pattern recognition and best practices",
+        "Security vulnerability detection",
+        "Performance optimization hints"
+      ]
+    }
+  ];
+
+  const additionalFeatures = [
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "Lightning Fast",
+      description: "Optimized algorithms ensure quick analysis even for large codebases"
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Privacy First",
+      description: "All analysis happens locally - your code never leaves your machine"
+    },
+    {
+      icon: <GitBranch className="w-6 h-6" />,
+      title: "Git Integration",
+      description: "Analyze specific branches, commits, or track changes over time"
+    },
+    {
+      icon: <Package className="w-6 h-6" />,
+      title: "Dependency Analysis",
+      description: "Understand your project's dependencies and their relationships"
+    },
+    {
+      icon: <Search className="w-6 h-6" />,
+      title: "Pattern Detection",
+      description: "Identify common patterns, anti-patterns, and code smells"
+    },
+    {
+      icon: <FileCode className="w-6 h-6" />,
+      title: ".insightignore Support",
+      description: "Exclude files and directories from analysis with gitignore-style patterns"
+    },
+    {
+      icon: <Terminal className="w-6 h-6" />,
+      title: "CLI & Scriptable",
+      description: "Integrate into your CI/CD pipeline or automation workflows"
+    },
+    {
+      icon: <CheckCircle className="w-6 h-6" />,
+      title: "Quality Scoring",
+      description: "Get an overall quality score based on multiple code health metrics"
+    }
+  ];
+
+  const fileTypes = [
+    '.py', '.js', '.ts', '.jsx', '.tsx', '.html', '.css', '.scss', '.json', '.yaml', 
+    '.yml', '.md', '.txt', '.xml', '.sql', '.sh', '.bash', '.go', '.rs', '.java', 
+    '.c', '.cpp', '.php', '.rb', '.swift', '.kt', '.dart', '.vue', '.svelte'
+  ];
+
+  return (
+    <div className="min-h-screen py-32 px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            Powerful Features
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Advanced code analysis capabilities powered by cutting-edge AI technology
+          </p>
+        </div>
+
+        {/* Main Features */}
+        <div className="space-y-24 mb-32">
+          {mainFeatures.map((feature, index) => (
+            <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+              <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                <div className="feature-card">
+                  <div className="feature-icon-wrapper mb-6">
+                    <div className="feature-icon">
+                      {feature.icon}
+                    </div>
+                  </div>
+                  <h2 className="text-3xl font-bold mb-4 text-white">
+                    {feature.title}
+                  </h2>
+                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+              <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                <div className="feature-card bg-gray-800/50">
+                  <h3 className="text-xl font-semibold mb-4 text-cyan-400">Key Capabilities:</h3>
+                  <ul className="space-y-3">
+                    {feature.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-start space-x-3 text-gray-300">
+                        <CheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Additional Features Grid */}
+        <div className="mb-32">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Additional Capabilities
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Even more features to enhance your code analysis workflow
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {additionalFeatures.map((feature, index) => (
+              <div key={index} className="feature-card group hover:scale-105 transition-transform">
+                <div className="feature-icon-wrapper mb-4">
+                  <div className="feature-icon bg-gradient-to-br from-cyan-500/20 to-purple-500/20">
+                    {feature.icon}
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-3 text-white group-hover:text-cyan-400 transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Supported File Types */}
+        <div className="mb-32">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent">
+              30+ Supported File Types
+            </h2>
+            <p className="text-xl text-gray-300">
+              Comprehensive support for modern development stacks
+            </p>
+          </div>
+          <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-10 gap-4">
+            {fileTypes.map((type, index) => (
+              <div key={index} className="file-type-badge group">
+                <span className="font-mono text-sm group-hover:text-cyan-400 transition-colors">
+                  {type}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Use Cases */}
+        <div className="text-center">
+          <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            Perfect For
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="feature-card">
+              <h3 className="text-2xl font-semibold mb-4 text-cyan-400">Code Reviews</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Get comprehensive insights before reviewing pull requests. Identify potential issues and understand code changes better.
+              </p>
+            </div>
+            <div className="feature-card">
+              <h3 className="text-2xl font-semibold mb-4 text-purple-400">Onboarding</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Help new team members understand the codebase quickly with detailed reports and AI-powered explanations.
+              </p>
+            </div>
+            <div className="feature-card">
+              <h3 className="text-2xl font-semibold mb-4 text-pink-400">Maintenance</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Track code quality over time, identify technical debt, and prioritize refactoring efforts effectively.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Features;
