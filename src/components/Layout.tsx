@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Terminal, Github, Menu, X, ChevronRight } from 'lucide-react';
+import { Terminal, Github, Menu, X, ChevronRight, Twitter, Linkedin, Mail, Heart, ExternalLink, Code2, Sparkles } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -146,42 +146,50 @@ const Layout: React.FC<LayoutProps> = ({ children, onOpenOnboarding }) => {
         </main>
 
         {/* Footer */}
-        <footer className="py-20 px-6 border-t border-cyan-500/20">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-              {/* Brand */}
-              <div className="md:col-span-2">
-                <div className="flex items-center space-x-2 mb-4">
-                  <Terminal className="w-8 h-8 text-cyan-400" />
-                  <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        <footer className="relative mt-32 overflow-hidden">
+          {/* Decorative gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-purple-500/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/5 to-transparent"></div>
+          
+          {/* Animated border */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
+          
+          <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+            {/* Main Footer Content */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+              {/* Brand Section */}
+              <div className="lg:col-span-5">
+                <div className="flex items-center space-x-3 mb-6 group">
+                  <div className="relative">
+                    <Terminal className="w-10 h-10 text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
+                    <div className="absolute inset-0 blur-xl bg-cyan-400/30 group-hover:bg-cyan-400/50 transition-all duration-300"></div>
+                  </div>
+                  <span className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                     Insight
                   </span>
+                  <Sparkles className="w-5 h-5 text-purple-400 animate-pulse" />
                 </div>
-                <p className="text-gray-400 leading-relaxed mb-6">
-                  AI-powered code analysis tool that helps developers understand their codebases better. 
-                  Combining static analysis with intelligent insights.
+                <p className="text-gray-400 leading-relaxed text-lg">
+                  AI-powered code analysis tool that transforms how developers understand and navigate their codebases. 
+                  <span className="text-cyan-400/80"> Intelligent insights, effortless exploration.</span>
                 </p>
-                <button 
-                  onClick={onOpenOnboarding}
-                  className="neon-button group flex items-center space-x-2"
-                >
-                  <Terminal className="w-5 h-5" />
-                  <span>Get Started</span>
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
               </div>
 
-              {/* Quick Links */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
-                <ul className="space-y-3">
+              {/* Navigation Links */}
+              <div className="lg:col-span-2">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-cyan-400 mb-6 flex items-center">
+                  <div className="w-8 h-px bg-gradient-to-r from-cyan-500 to-transparent mr-3"></div>
+                  Navigate
+                </h3>
+                <ul className="space-y-4">
                   {navLinks.map((link) => (
                     <li key={link.path}>
                       <Link 
                         to={link.path}
-                        className="text-gray-400 hover:text-cyan-400 transition-colors"
+                        className="group flex items-center text-gray-400 hover:text-cyan-400 transition-all duration-300"
                       >
-                        {link.label}
+                        <ChevronRight className="w-4 h-4 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                        <span className="group-hover:translate-x-1 transition-transform duration-300">{link.label}</span>
                       </Link>
                     </li>
                   ))}
@@ -189,17 +197,21 @@ const Layout: React.FC<LayoutProps> = ({ children, onOpenOnboarding }) => {
               </div>
 
               {/* Resources */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4 text-white">Resources</h3>
-                <ul className="space-y-3">
+              <div className="lg:col-span-2">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-purple-400 mb-6 flex items-center">
+                  <div className="w-8 h-px bg-gradient-to-r from-purple-500 to-transparent mr-3"></div>
+                  Resources
+                </h3>
+                <ul className="space-y-4">
                   <li>
                     <a 
                       href="https://github.com/XplnHUB/Insight-Py" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-cyan-400 transition-colors"
+                      className="group flex items-center text-gray-400 hover:text-purple-400 transition-all duration-300"
                     >
-                      GitHub
+                      <ExternalLink className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">GitHub</span>
                     </a>
                   </li>
                   <li>
@@ -207,9 +219,10 @@ const Layout: React.FC<LayoutProps> = ({ children, onOpenOnboarding }) => {
                       href="https://github.com/XplnHUB/Insight-Py/blob/main/README.md" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-cyan-400 transition-colors"
+                      className="group flex items-center text-gray-400 hover:text-purple-400 transition-all duration-300"
                     >
-                      Documentation
+                      <ExternalLink className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">Documentation</span>
                     </a>
                   </li>
                   <li>
@@ -217,42 +230,98 @@ const Layout: React.FC<LayoutProps> = ({ children, onOpenOnboarding }) => {
                       href="https://github.com/XplnHUB/Insight-Py/issues" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-cyan-400 transition-colors"
+                      className="group flex items-center text-gray-400 hover:text-purple-400 transition-all duration-300"
                     >
-                      Issues
+                      <ExternalLink className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">Issues</span>
                     </a>
                   </li>
                   <li>
                     <a 
-                      href="https://github.com/XplnHUB/Insight-Py/discussions" 
+                      href="" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-cyan-400 transition-colors"
+                      className="group flex items-center text-gray-400 hover:text-purple-400 transition-all duration-300"
                     >
-                      Discussions
+                      <ExternalLink className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">Discussions</span>
                     </a>
                   </li>
                 </ul>
               </div>
+
+              {/* Connect Section */}
+              <div className="lg:col-span-3">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-pink-400 mb-6 flex items-center">
+                  <div className="w-8 h-px bg-gradient-to-r from-pink-500 to-transparent mr-3"></div>
+                  Connect
+                </h3>
+                <p className="text-gray-400 text-sm mb-6">
+                  Join our community and stay updated with the latest features and improvements.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <a 
+                    href="https://github.com/XplnHUB/Insight-Py" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group p-3 bg-gray-800/50 hover:bg-gray-800 border border-gray-700/50 hover:border-cyan-500/50 rounded-xl transition-all duration-300 hover:scale-110"
+                    title="GitHub"
+                  >
+                    <Github className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" />
+                  </a>
+                  <a 
+                    href="" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group p-3 bg-gray-800/50 hover:bg-gray-800 border border-gray-700/50 hover:border-cyan-500/50 rounded-xl transition-all duration-300 hover:scale-110"
+                    title="Twitter"
+                  >
+                    <Twitter className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" />
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/arpitsarang/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group p-3 bg-gray-800/50 hover:bg-gray-800 border border-gray-700/50 hover:border-purple-500/50 rounded-xl transition-all duration-300 hover:scale-110"
+                    title="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors" />
+                  </a>
+                  <a 
+                    href="" 
+                    className="group p-3 bg-gray-800/50 hover:bg-gray-800 border border-gray-700/50 hover:border-pink-500/50 rounded-xl transition-all duration-300 hover:scale-110"
+                    title="Email"
+                  >
+                    <Mail className="w-5 h-5 text-gray-400 group-hover:text-pink-400 transition-colors" />
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Bottom Bar */}
-            <div className="pt-8 border-t border-cyan-500/20 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-gray-500 text-sm">
-                <p>&copy; 2025 XplnHUB ~ CodeMaverick-143. Built with ❤️ for developers.</p>
-              </div>
-              <div className="flex items-center space-x-6">
-                <a 
-                  href="https://github.com/XplnHUB/Insight-Py" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-cyan-400 transition-colors"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
+            <div className="relative">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
+              <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="flex items-center gap-2 text-gray-500 text-sm">
+                  <span>&copy; 2025 XplnHUB ~ CodeMaverick-143</span>
+                  <span className="hidden md:inline">•</span>
+                  <span className="flex items-center gap-1">
+                    Built with <Heart className="w-4 h-4 text-pink-500 fill-pink-500 animate-pulse" /> for developers
+                  </span>
+                </div>
+                <div className="flex items-center gap-6 text-sm text-gray-500">
+                  <a href="#" className="hover:text-cyan-400 transition-colors">Privacy</a>
+                  <span>•</span>
+                  <a href="#" className="hover:text-cyan-400 transition-colors">Terms</a>
+                  <span>•</span>
+                  <a href="#" className="hover:text-cyan-400 transition-colors">License</a>
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Decorative bottom gradient */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 to-transparent pointer-events-none"></div>
         </footer>
       </div>
     </div>

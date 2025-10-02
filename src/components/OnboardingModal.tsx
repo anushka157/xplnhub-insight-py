@@ -224,7 +224,7 @@ const OnboardingModal: React.FC<OnboardingModalProps> = ({ isOpen, onClose }) =>
                 </button>
               </div>
               <div className="terminal-line delay-1">
-                <span className="text-purple-400 typewriter">(venv)</span>
+                <div><span className="text-purple-400 typewriter">(venv)</span></div>
                 <span className="text-green-400 ml-1">$</span>
                 <span className="text-gray-400 ml-2">Environment activated!</span>
               </div>
@@ -456,10 +456,16 @@ const OnboardingModal: React.FC<OnboardingModalProps> = ({ isOpen, onClose }) =>
 
   const progressPercentage = ((currentStep + 1) / steps.length) * 100;
 
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div className="onboarding-overlay">
+    <div className="onboarding-overlay" onClick={handleOverlayClick}>
       <div className="onboarding-modal">
         <div className="onboarding-background">
           <div className="cyber-grid-modal"></div>
