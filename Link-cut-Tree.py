@@ -3,7 +3,6 @@
 #          updateValue(u, val), pathSum(u, v), findRoot(u)
 #
 # Complexity: amortized O(log n) per operation.
-
 class Node:
     __slots__ = ('val', 'sum', 'left', 'right', 'parent', 'rev')
     def __init__(self, val=0):
